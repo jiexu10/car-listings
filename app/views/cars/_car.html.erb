@@ -1,0 +1,9 @@
+<div class="car">
+  Manufacturer: <%= car.manufacturer.name %>
+  Color: <%= car.color %>
+  Year: <%= car.year %>
+  Mileage: <%= car.mileage %>
+  <% unless car.description.empty? %>
+    Description: <%= car.description %>
+  <% end %>
+</div>

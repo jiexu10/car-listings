@@ -1,0 +1,8 @@
+---
+title: "Car Listing"
+type: "challenge"
+description: "Create a web application to manage used cars."
+visibility: "assign"
+tags: "system-check, rails, tdd"
+ignore:
+- "car-listings.md"

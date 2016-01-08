@@ -1,0 +1,21 @@
+<%= form_for [@manufacturer] do |f| %>
+
+  <% if @manufacturer.errors.any? %>
+    <div class="error_explanation">
+      <h2><%= pluralize(@manufacturer.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <%= @manufacturer.errors.full_messages.join('. ') + "." %>
+    </div>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+
+  <div class="actions">
+    <%= f.submit 'Add Manufacturer' %>
+  </div>
+
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_for [@car] do |f| %>
+
+  <% if @car.errors.any? %>
+    <div class="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <%= @car.errors.full_messages.join('. ') + "." %>
+    </div>
+  <% end %>
+
+  <%= f.collection_select(:manufacturer_id, @manufacturers, :id, :name, { prompt: 'Choose manufacturer...' }) %>
+
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <div class="actions">
+    <%= f.submit 'Add Car' %>
+  </div>
+
+<% end %>
