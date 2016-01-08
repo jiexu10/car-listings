@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160108161056) do
     t.string   "color",           null: false
     t.string   "year",            null: false
     t.string   "mileage",         null: false
-    t.string   "description",     null: false
+    t.string   "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -45,12 +45,29 @@ feature 'add a car manufacturer', %{
     fill_in 'Mileage', with: '55000'
     click_button 'Add Car'
 
-    expect(page).to have_content('Year must be after 1920')
+    expect(page).to have_content('Year must be after 1920.')
     expect(page).to_not have_content('Car Successfully Added!')
     expect(find_field('car[manufacturer_id]').value).to eq("#{manufacturer.id}")
     expect(find_field('car[color]').value).to eq('Black')
     expect(find_field('car[year]').value).to eq('1910')
     expect(find_field('car[mileage]').value).to eq('55000')
+  end
+
+  scenario 'user specifies an invalid mileage' do
+    visit new_car_path
+
+    select "#{manufacturer.name}", from: 'car[manufacturer_id]'
+    fill_in 'Color', with: 'Black'
+    fill_in 'Year', with: '2010'
+    fill_in 'Mileage', with: 'asdf'
+    click_button 'Add Car'
+
+    expect(page).to have_content('Mileage must be a number.')
+    expect(page).to_not have_content('Car Successfully Added!')
+    expect(find_field('car[manufacturer_id]').value).to eq("#{manufacturer.id}")
+    expect(find_field('car[color]').value).to eq('Black')
+    expect(find_field('car[year]').value).to eq('2010')
+    expect(find_field('car[mileage]').value).to eq('asdf')
   end
 
   scenario 'user does not specify description and entry is valid' do
