@@ -1,5 +1,13 @@
-manufacturers index
-
+<h3>Manufacturers Index</h3>
 <%= link_to 'Add New Manufacturer', new_manufacturer_path %>
 
-<%= render @manufacturers %>
+<section class="block-list">
+<header>Manufacturers:</header>
+  <% unless @manufacturers.empty? %>
+    <ul class="manufacturer-list">
+      <%= render @manufacturers %>
+    </ul>
+  <% else %>
+    No manufacturers Here Yet!
+  <% end %>
+</section>

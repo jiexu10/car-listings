@@ -1,0 +1,23 @@
+section.block-list ul {
+  margin: 1em;
+  border: 1px solid #DDDDDD;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  list-style-position: outside;
+  margin-bottom: 15px;
+}
+
+section.block-list ul li {
+  display: block;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 0.5em;
+  margin: 0;
+}
+
+section.block-list ul li:last-child {
+    border-bottom: 0;
+}
+
+section.block-list ul li:hover {
+    background-color: #eeeeee;
+}

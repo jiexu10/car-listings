@@ -1,5 +1,13 @@
-cars index
-
+<h3>Cars Index</h3>
 <%= link_to 'Add New Car', new_car_path %>
 
-<%= render @cars %>
+<section class="block-list">
+<header>Cars:</header>
+  <% unless @cars.empty? %>
+    <ul class="manufacturer-list">
+      <%= render @cars %>
+    </ul>
+  <% else %>
+    No Cars Here Yet!
+  <% end %>
+</section>

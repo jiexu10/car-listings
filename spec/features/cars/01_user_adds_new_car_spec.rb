@@ -33,6 +33,7 @@ feature 'add a car manufacturer', %{
     expect(page).to have_content('Color: Black')
     expect(page).to have_content('Year: 2010')
     expect(page).to have_content('Mileage: 55000')
+    expect(page).to have_content('Condition (Expert Evaluation): Good')
     expect(page).to have_content('Description: some description')
   end
 
